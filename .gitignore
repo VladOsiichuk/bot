@@ -2,3 +2,5 @@ media
 
 .idea
 venv
+
+*.pyc
