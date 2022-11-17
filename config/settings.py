@@ -131,3 +131,5 @@ CELERY_RESULT_BACKEND = 'redis://127.0.0.1:6379/0'
 CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TASK_SERIALIZER = 'json'
+
+CSRF_TRUSTED_ORIGINS = ['http://ec2-15-188-54-208.eu-west-3.compute.amazonaws.com']
