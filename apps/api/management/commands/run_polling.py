@@ -3,6 +3,7 @@ from telebot.types import BotCommand
 
 from apps.api.bot import bot
 from apps.api.handlers.course import set_course_handler
+from apps.api.handlers.schedule import show_schedule_handler
 from apps.api.handlers.start import start_handler
 
 
@@ -11,7 +12,8 @@ class Command(BaseCommand):
         print("Start bot")
         bot.set_my_commands(
             [
-                BotCommand(command="/set_course", description="Змінити клас")
+                BotCommand(command="/set_course", description="Змінити клас"),
+                BotCommand(command="/show_schedule", description="Переглянути розклад")
             ]
         )
         start_handler_params = {
@@ -25,4 +27,9 @@ class Command(BaseCommand):
             "filters": {"commands": ["set_course"]}
         }
         bot.add_message_handler(set_course_handler_params)
+        show_schedule_handler_params = {
+            "function": show_schedule_handler,
+            "filters": {"commands": ["show_schedule"]}
+        }
+        bot.add_message_handler(show_schedule_handler_params)
         bot.polling(True)

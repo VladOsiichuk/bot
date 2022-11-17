@@ -12,7 +12,7 @@ class Schedule(models.Model):
     day = models.DateTimeField()
 
     def __str__(self):
-        return f"{self.day.date()} - {self.course}"
+        return f"{self.day.strftime('%d-%m')} - {self.course}"
 
 
 class ScheduleLesson(models.Model):
