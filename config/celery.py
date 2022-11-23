@@ -20,6 +20,8 @@ app.conf.beat_schedule = {
         "schedule": crontab(hour=5, minute=0)
     }
 }
+app.conf.broker_transport_options = {'visibility_timeout': 86400}
+
 
 # Load task modules from all registered Django apps.
 app.autodiscover_tasks()
