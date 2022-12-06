@@ -14,8 +14,8 @@ class Course(models.Model):
 
 class Student(models.Model):
     course = models.ForeignKey(Course, null=True, default=None, on_delete=models.PROTECT, related_name="students")
-    first_name = models.CharField(max_length=128)
-    last_name = models.CharField(max_length=128)
+    first_name = models.CharField(max_length=128, null=True)
+    last_name = models.CharField(max_length=128, null=True)
     chat_id = models.CharField(max_length=128)
 
     def __str__(self):
